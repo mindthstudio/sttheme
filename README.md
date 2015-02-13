@@ -17,9 +17,15 @@ you can see demo here http://....
  - page indicator
 
 # TODO
- - spinner
+ - SpinnerList
  - list
  - combobox
- - toggle switch
+ - TextArea
+ - ToggleSwitch
+ - PickerList
+ - Drawers
+ - Alert
+ - Check
+ - NumericStepper
  - optimize
  
