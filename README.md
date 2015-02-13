@@ -1,5 +1,5 @@
 # Starling Feather 2.1.0 + free theme
-this is feather free theme this theme emulate from bootstrap
+this is feather free theme this theme emulate from flaty ui
 
 you can see demo here http://....
 
@@ -13,9 +13,13 @@ you can see demo here http://....
  - label
  - tabbar
  - panel
+ - callout
+ - page indicator
 
 # TODO
  - spinner
  - list
+ - combobox
+ - toggle switch
  - optimize
  
