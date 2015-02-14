@@ -1,16 +1,23 @@
 package
 {
 	import com.mindthstudio.theme.STTheme;
-
+	
 	import feathers.controls.Button;
+	import feathers.controls.Callout;
 	import feathers.controls.Label;
 	import feathers.controls.PageIndicator;
 	import feathers.controls.Panel;
 	import feathers.controls.Screen;
 	import feathers.controls.ScrollText;
+	import feathers.controls.TabBar;
 	import feathers.controls.TextInput;
+	import feathers.controls.ToggleButton;
+	import feathers.data.ListCollection;
+	import feathers.layout.TiledColumnsLayout;
+	import feathers.layout.TiledRowsLayout;
 	import feathers.layout.VerticalLayout;
-
+	
+	import starling.core.Starling;
 	import starling.events.Event;
 
 	public class GameStage extends Screen
@@ -26,6 +33,11 @@ package
 		private var panel2:Panel;
 		private var pageIndicator:PageIndicator;
 		private var scrollText:ScrollText;
+		
+		private var toggle1:ToggleButton;
+		private var tabbar:TabBar;
+		
+		private var panel3:Panel;
 
 		public function GameStage()
 		{
@@ -38,11 +50,11 @@ package
 
 		private function whenInit(e:Event):void
 		{
-			var myLayout:VerticalLayout = new VerticalLayout;
-			myLayout.gap = 10;
-			myLayout.padding = 15;
+			var myLayout:TiledColumnsLayout = new TiledColumnsLayout;
 
 			layout = myLayout;
+			
+			setSize(Starling.current.stage.stageWidth,Starling.current.stage.stageHeight);
 
 			panel = new Panel;
 			panel.layout = new VerticalLayout;
@@ -93,10 +105,20 @@ package
 			mLabel = new Label;
 			mLabel.text = "Label text";
 			panel.addChild(mLabel);
+			
+			toggle1 = new ToggleButton;
+			toggle1.label = "Toggle Button 1";
+			panel.addChild(toggle1);
+			
+			tabbar = new TabBar;
+			tabbar.dataProvider = new ListCollection([{'label':'A'},{'label':'B'},{'label':'C'}]);
+			panel.addChild(tabbar);
+			
 
 			panel2 = new Panel;
 			panel2.title = "ScollText";
 			panel2.setSize(400, 400);
+			panel2.layout = new VerticalLayout;
 
 			addChild(panel2);
 
@@ -105,6 +127,14 @@ package
 			scrollText.text = "STThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\n";
 
 			panel2.addChild(scrollText);
+		}
+		
+		private function makeLabel(text:String):Label{
+			var label:Label = new Label;
+			
+			label.text = text;
+			
+			return label;
 		}
 	}
 }

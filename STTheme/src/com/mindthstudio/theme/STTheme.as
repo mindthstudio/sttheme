@@ -2,9 +2,10 @@ package com.mindthstudio.theme
 {
 	import flash.geom.Rectangle;
 	import flash.text.TextFormat;
-
+	
 	import feathers.controls.Alert;
 	import feathers.controls.Button;
+	import feathers.controls.Callout;
 	import feathers.controls.Header;
 	import feathers.controls.Label;
 	import feathers.controls.List;
@@ -23,7 +24,7 @@ package com.mindthstudio.theme
 	import feathers.display.Scale9Image;
 	import feathers.skins.FunctionStyleProvider;
 	import feathers.textures.Scale9Textures;
-
+	
 	import starling.core.Starling;
 	import starling.display.DisplayObject;
 	import starling.display.Image;
@@ -77,6 +78,7 @@ package com.mindthstudio.theme
 			Panel.globalStyleProvider = new FunctionStyleProvider(setPanel);
 			ProgressBar.globalStyleProvider = new FunctionStyleProvider(setProgressBar);
 			PageIndicator.globalStyleProvider = new FunctionStyleProvider(setPageIndicator);
+			Callout.globalStyleProvider = new FunctionStyleProvider(setCallout);
 
 			// Todo here 
 			// List.globalStyleProvider = new FunctionStyleProvider(setList);
@@ -138,6 +140,16 @@ package com.mindthstudio.theme
 
 		private function setToggleButton(togglebutton:ToggleButton):void
 		{
+			togglebutton.defaultSkin = new Quad(1,1,0x2c3e50);
+			togglebutton.disabledSkin = new Quad(1,1,0xcecece);
+			togglebutton.selectedHoverSkin = togglebutton.hoverSkin = new Quad(1,1,0x3d5771);
+			togglebutton.selectedUpSkin = new Quad(1,1,0x1d2935);
+			
+			togglebutton.padding = 15;
+			
+			togglebutton.labelFactory = function():TextFieldTextRenderer{
+				return setTextRenderer(QUARK_B_FONT,20,0xffffff);
+			}
 		}
 
 		private function setScrollbar(scrollbar:ScrollBar):void
@@ -266,6 +278,18 @@ package com.mindthstudio.theme
 
 		private function setAlert(alert:Alert):void
 		{
+		}
+		
+		private function setCallout(callout:Callout):void
+		{
+			callout.rightArrowSkin = new Image(_atlas.getTexture("callout-r.png"));
+			callout.leftArrowSkin = new Image(_atlas.getTexture("callout-l.png"));
+			callout.bottomArrowSkin = new Image(_atlas.getTexture("callout-d.png"));
+			callout.topArrowSkin = new Image(_atlas.getTexture("callout-t.png"));
+			callout.backgroundSkin = new Quad(1,1,0xffffff);
+			callout.padding = 15;
+			
+			callout.filter = BlurFilter.createDropShadow(4, 0.785, 0, 0.05);
 		}
 
 	}

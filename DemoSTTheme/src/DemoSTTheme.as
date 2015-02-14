@@ -10,7 +10,7 @@ package
 	{
 		public function DemoSTTheme()
 		{
-			var mStarling:Starling = new Starling(GameStage, stage, new Rectangle(0, 0, stage.fullScreenWidth, stage.fullScreenHeight));
+			var mStarling:Starling = new Starling(GameStage, stage, new Rectangle(0, 0, stage.stageWidth, stage.stageHeight));
 
 			mStarling.start();
 		}
