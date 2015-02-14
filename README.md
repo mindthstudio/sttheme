@@ -1,7 +1,7 @@
 # Starling Feather 2.1.0 + free theme
 this is feather free theme this theme emulate from flaty ui
 
-you can see demo here http://....
+you can see demo here http://app.kuisociety.com/demotheme/sttheme/
 
 # Feature support
  - header
