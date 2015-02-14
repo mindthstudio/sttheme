@@ -122,10 +122,10 @@ package com.mindthstudio.theme
 
 		private function setButton(button:Button):void
 		{
-			button.defaultSkin = new Scale9Image(new Scale9Textures(_atlas.getTexture("default-button.png"), new Rectangle(14, 14, 22, 22)));
-			button.hoverSkin = new Scale9Image(new Scale9Textures(_atlas.getTexture("selected-button.png"), new Rectangle(14, 14, 22, 22)));
-			button.downSkin = new Scale9Image(new Scale9Textures(_atlas.getTexture("selected-button.png"), new Rectangle(14, 14, 22, 22)));
-			button.disabledSkin = new Scale9Image(new Scale9Textures(_atlas.getTexture("disable-button.png"), new Rectangle(14, 14, 22, 22)));
+			button.defaultSkin = new Scale9Image(new Scale9Textures(_atlas.getTexture("default-button.png"), new Rectangle(8, 8, 4, 8)));
+			button.hoverSkin = new Scale9Image(new Scale9Textures(_atlas.getTexture("hover-button.png"), new Rectangle(8, 8, 4, 8)));
+			button.downSkin = new Scale9Image(new Scale9Textures(_atlas.getTexture("selected-button.png"), new Rectangle(8, 8, 4, 8)));
+			button.disabledSkin = new Scale9Image(new Scale9Textures(_atlas.getTexture("disable-button.png"), new Rectangle(8, 8, 4, 8)));
 			button.disabledLabelProperties.textFormat = setTextRenderer(QUARK_B_FONT, 20, 0x808080).textFormat;
 
 			button.padding = 5;
@@ -230,7 +230,7 @@ package com.mindthstudio.theme
 		{
 			scrollText.textFormat = setTextRenderer(QUARK_L_FONT, 20, 0x2c3e50).textFormat;
 
-			scrollText.verticalScrollBarFactory = function():ScrollBar
+			/*scrollText.verticalScrollBarFactory = function():ScrollBar
 			{
 				var scrollbar:ScrollBar = new ScrollBar;
 
@@ -251,7 +251,7 @@ package com.mindthstudio.theme
 				scrollbar.thumbProperties.downSkin = new Scale9Image(new Scale9Textures(_atlas.getTexture("default-scrollbar.png"), new Rectangle(5, 5, 10, 10)));
 
 				return scrollbar;
-			}
+			}*/
 		}
 
 		private function btnStyle(button:Button):void

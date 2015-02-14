@@ -101,7 +101,7 @@ package
 			addChild(panel2);
 
 			scrollText = new ScrollText;
-			scrollText.setSize(350, 300);
+			scrollText.setSize(370, 300);
 			scrollText.text = "STThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\nSTThemeSTThemeSTThemeSTThemeSTThemeSTThemeSTTheme\n";
 
 			panel2.addChild(scrollText);
